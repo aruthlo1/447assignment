@@ -159,12 +159,7 @@ def add_register():
     data = request.get_json()
     course_id = data.get('course_id')
     student_id = data.get('student_id')
-
-    # Check if the course and student exist
-    course = Course.query.get(course_id)
-    student = Student.query.get(student_id)
-
-    if course and student:
+    if True:
         new_register = Register(course_id=course_id, student_id=student_id)
         db.session.add(new_register)
         db.session.commit()
